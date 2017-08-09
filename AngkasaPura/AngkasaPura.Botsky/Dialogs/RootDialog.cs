@@ -11,8 +11,10 @@
     public class RootDialog : IDialog<object>
     {
         const string LaporanOption = "Mau Laporan";
-        const string FlightOption = "Get Flight Info";
+        const string FlightOption = "Flight Info";
         const string FacilityOption = "Facility Info (dine, taxi, hotel, shop)";
+        const string ImportantNoOption = "Important Number Info";
+
         const string FAQOption = "Mau Tanya";
         public async Task StartAsync(IDialogContext context)
         {
@@ -35,7 +37,7 @@
 
         private void ShowOptions(IDialogContext context)
         {
-            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption,FacilityOption, FAQOption }, "Halo bos, ada yang bisa dibantu ?", "Pilihan yang tidak tepat bos.", 4);
+            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption,FacilityOption, ImportantNoOption, FAQOption }, "Halo bos, ada yang bisa dibantu ?", "Pilihan yang tidak tepat bos.", 5);
         }
 
         private async Task OnOptionSelected(IDialogContext context, IAwaitable<string> result)
@@ -58,6 +60,9 @@
                         break;
                     case FacilityOption:
                         context.Call(new FacilityDialog(), this.ResumeAfterOptionDialog);
+                        break;
+                    case ImportantNoOption:
+                        context.Call(new ImportantNoDialog(), this.ResumeAfterOptionDialog);
                         break;
                 }
             }

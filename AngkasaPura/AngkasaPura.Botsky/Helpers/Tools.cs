@@ -8,9 +8,11 @@ namespace AngkasaPura.Botsky.Helpers
 {
     public class Tools
     {
-        public static string StripHTML(string input)
+        public static string StripHTML(string value)
         {
-            return Regex.Replace(input, "<.*?>", String.Empty);
+            var step1 = Regex.Replace(value, @"<[^>]+>|&nbsp;", "").Trim();
+            var step2 = Regex.Replace(step1, @"\s{2,}", " ");
+            return step2;
         }
     }
 }

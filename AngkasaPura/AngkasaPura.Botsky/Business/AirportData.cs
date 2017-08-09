@@ -37,6 +37,14 @@ namespace AngkasaPura.Botsky.Business
             var data = Context.GetDataByQuery<Facility>("Facilities", query);
             return data;
         }
+        public static List<Facility> GetImportantNumber(string Name = null)
+        {
+            var query = Name == null ? $"SELECT * FROM c where c.CATEGORY_NAME_ENG <> 'Dine' AND c.CATEGORY_NAME_ENG <> 'Taxi' AND c.CATEGORY_NAME_ENG <> 'Hotel' AND c.CATEGORY_NAME_ENG <> 'Shop'" : $"SELECT * FROM c where c.CATEGORY_NAME_ENG <> 'Dine' AND c.CATEGORY_NAME_ENG <> 'Taxi' AND c.CATEGORY_NAME_ENG <> 'Hotel' AND c.CATEGORY_NAME_ENG <> 'Shop' AND CONTAINS(LOWER(c.OBJECT_NAME),'{Name.ToLower()}')";
+            var data = Context.GetDataByQuery<Facility>("Facilities", query);
+            return data;
+        }
+        //
+
         #endregion
     }
 

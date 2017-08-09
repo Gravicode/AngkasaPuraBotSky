@@ -14,22 +14,22 @@ using AngkasaPura.Botsky.Helpers;
 namespace AngkasaPura.Botsky.Dialogs
 {
     [Serializable]
-    public class FacilityDialog : IDialog<object>
+    public class ImportantNoDialog : IDialog<object>
     {
         public async Task StartAsync(IDialogContext context)
         {
-            var OrderFormDialog = FormDialog.FromForm<FacilityQuery>(FacilityQuery.BuildForm, FormOptions.PromptInStart);
+            var OrderFormDialog = FormDialog.FromForm<ImportantNoQuery>(ImportantNoQuery.BuildForm, FormOptions.PromptInStart);
             context.Call(OrderFormDialog, this.ResumeAfterOrderFormDialog);
         }
 
-        private async Task ResumeAfterOrderFormDialog(IDialogContext context, IAwaitable<FacilityQuery> result)
+        private async Task ResumeAfterOrderFormDialog(IDialogContext context, IAwaitable<ImportantNoQuery> result)
         {
             try
             {
                 var hasil = await result;
                 if (hasil.Results != null)
                 {
-                    
+
                     Activity replyToConversation = context.MakeMessage() as Activity; //message.CreateReply("Should go to conversation, in list format");
                     replyToConversation.AttachmentLayout = AttachmentLayoutTypes.List;
                     replyToConversation.Attachments = new List<Attachment>();
@@ -54,7 +54,7 @@ namespace AngkasaPura.Botsky.Dialogs
                         ThumbnailCard plCard = new ThumbnailCard()
                         {
                             Title = $"{Tools.StripHTML(item.OBJECT_NAME)}",
-                            Subtitle = $"Address : { Tools.StripHTML( item.OBJECT_ADDRESS)}, Phone : {Tools.StripHTML(item.OBJECT_PHONE)}",
+                            Subtitle = $"Address : { Tools.StripHTML(item.OBJECT_ADDRESS)}, Phone : {Tools.StripHTML(item.OBJECT_PHONE)}",
 
                             Images = cardImages,
                             Buttons = cardButtons
@@ -94,38 +94,26 @@ namespace AngkasaPura.Botsky.Dialogs
     }
 
     [Serializable]
-    public enum FacilityTypes
-    {
-        [Terms("Dine")]
-        Dine=1,
-        [Terms("Taxi")]
-        Taxi,
-        [Terms("Hotel")]
-        Hotel,
-        [Terms("Shop")]
-        Shop
-    }
-    [Serializable]
     //[Template(TemplateUsage.NotUnderstood, "Ane ga paham \"{0}\".", "Coba lagi ya, ane tidak dapat nilai \"{0}\".")]
-    public class FacilityQuery
+    public class ImportantNoQuery
     {
         public DateTime QueryDate;
         public List<Facility> Results;
-        [Prompt("What are you looking for ? {||}")]
-        public FacilityTypes FacilityType;
+    
         [Prompt("What is the name or left blank if you don't remember ? {||}")]
+        [Describe(description:"eg. Polisi")]
         public string Name;
 
-        public static IForm<FacilityQuery> BuildForm()
+        public static IForm<ImportantNoQuery> BuildForm()
         {
 
-            OnCompletionAsyncDelegate<FacilityQuery> processOrder = async (context, state) =>
+            OnCompletionAsyncDelegate<ImportantNoQuery> processOrder = async (context, state) =>
             {
                 await Task.Run(() =>
                 {
-               
+
                     state.QueryDate = DateTime.Now;
-                    var data = AirportData.GetFacilityByCategory(state.FacilityType.ToString(), string.IsNullOrEmpty(state.Name)? null : state.Name);
+                    var data = AirportData.GetImportantNumber(state.Name);
                     if (data != null && data.Count > 0)
                     {
                         state.Results = data;
@@ -138,9 +126,8 @@ namespace AngkasaPura.Botsky.Dialogs
                 }
                  );
             };
-            var builder = new FormBuilder<FacilityQuery>(false);
+            var builder = new FormBuilder<ImportantNoQuery>(false);
             var form = builder
-                        .Field(nameof(FacilityType))
                         .Field(nameof(Name))
                         .OnCompletion(processOrder)
                         .Build();

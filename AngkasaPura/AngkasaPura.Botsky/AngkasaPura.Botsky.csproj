@@ -147,6 +147,7 @@
     <Compile Include="Dialogs\FacilityDialog.cs" />
     <Compile Include="Dialogs\FAQDialog.cs" />
     <Compile Include="Dialogs\FlightDialog.cs" />
+    <Compile Include="Dialogs\ImportantNoDialog.cs" />
     <Compile Include="Dialogs\OrderDialog.cs" />
     <Compile Include="Dialogs\ReportDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
