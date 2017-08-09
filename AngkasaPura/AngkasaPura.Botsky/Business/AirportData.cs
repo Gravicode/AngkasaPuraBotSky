@@ -1,8 +1,10 @@
-﻿using AngkasaPura.Botsky.Helpers;
+﻿using AngkasaPura.Botsky.Dialogs;
+using AngkasaPura.Botsky.Helpers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace AngkasaPura.Botsky.Business
@@ -20,7 +22,7 @@ namespace AngkasaPura.Botsky.Business
                 return Data;
             }
         }
-        #region Flight
+        #region Data Query
         public static List<Flight> GetFlightByCode(string Code)
         {
             var data = Context.GetDataByQuery<Flight>("Flights",$"SELECT * FROM Flights WHERE Flights.FLIGHT_NO ='{Code}'");
@@ -42,6 +44,44 @@ namespace AngkasaPura.Botsky.Business
             var query = Name == null ? $"SELECT * FROM c where c.CATEGORY_NAME_ENG <> 'Dine' AND c.CATEGORY_NAME_ENG <> 'Taxi' AND c.CATEGORY_NAME_ENG <> 'Hotel' AND c.CATEGORY_NAME_ENG <> 'Shop'" : $"SELECT * FROM c where c.CATEGORY_NAME_ENG <> 'Dine' AND c.CATEGORY_NAME_ENG <> 'Taxi' AND c.CATEGORY_NAME_ENG <> 'Hotel' AND c.CATEGORY_NAME_ENG <> 'Shop' AND CONTAINS(LOWER(c.OBJECT_NAME),'{Name.ToLower()}')";
             var data = Context.GetDataByQuery<Facility>("Facilities", query);
             return data;
+        }
+        public static List<Luggage> GetLuggages(string Airline, string FlightNo = null)
+        {
+            var query = $"SELECT * FROM C WHERE CONTAINS(LOWER(C.LONG_NAME),'{Airline.ToLower()}') AND CONTAINS(LOWER(C.FLIGHT_NUM),'{FlightNo.ToLower()}')";
+            var data = Context.GetDataByQuery<Luggage>("Luggages", query);
+            return data;
+        }
+        public static List<APTV> GetAPTV()
+        {
+            var query = $"SELECT * FROM C";
+            var data = Context.GetDataByQuery<APTV>("APTV", query);
+            return data;
+        }
+        public static List<News> GetLatestNews()
+        {
+            var query = $"SELECT TOP 10 * FROM C ORDER BY C.ARTICLE_ID DESC";
+            var data = Context.GetDataByQuery<News>("News", query);
+            return data;
+        }
+        public static List<Report> GetReportByDate(DateTime StartDate,DateTime EndDate)
+        {
+            if (EndDate < StartDate)
+            {
+                var temp = EndDate;
+                EndDate = StartDate;
+                StartDate = temp;
+            }
+            var query = $"SELECT * FROM C WHERE C.REPORT_DATE >= '{StartDate.ToString("yyyy-MM-dd")}' AND C.REPORT_DATE <= '{EndDate.ToString("yyyy-MM-dd")}'";
+            Console.WriteLine(query);
+            var data = Context.GetDataByQuery<Report >("Reports", query);
+            return data;
+        }
+
+        public static async Task<bool> InsertComplain(Complain data)
+        {
+
+            var hasil = await Context.InsertDoc<Complain>("Complains",data);
+            return await Task.FromResult(hasil);
         }
         //
 
@@ -183,6 +223,28 @@ namespace AngkasaPura.Botsky.Business
         public string AIRLINE_NAME { get; set; }
         public string BRANCH_CODE { get; set; }
         public string FR { get; set; }
+    }
+    public class Complain
+    {
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
+        public string NoLaporan { set; get; }
+        public DateTime TglLaporan { set; get; }
+        public string Nama { set; get; }
+
+        public string Telpon { set; get; }
+
+        public string Email { set; get; }
+
+        public TipeLaporan TipeLaporan { set; get; }
+
+        public string Keterangan { set; get; }
+
+        public string Lokasi { set; get; }
+
+        public DateTime Waktu { set; get; }
+
+        public int SkalaPrioritas { set; get; }
     }
     #endregion
 }

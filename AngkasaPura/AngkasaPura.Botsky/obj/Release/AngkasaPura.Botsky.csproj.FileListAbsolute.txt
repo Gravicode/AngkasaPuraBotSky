@@ -214,3 +214,9 @@ C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\zh-Han
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\obj\Release\AngkasaPura.Botsky.csprojResolveAssemblyReference.cache
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\obj\Release\Bot Application.dll
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\obj\Release\Bot Application.pdb
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\AdaptiveCards.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\Microsoft.Bot.Builder.Extensions.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\Microsoft.Bot.Builder.Extensions.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\it\Microsoft.Bot.Builder.resources.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\nl\Microsoft.Bot.Builder.resources.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\pt-BR\Microsoft.Bot.Builder.resources.dll

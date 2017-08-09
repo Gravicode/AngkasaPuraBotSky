@@ -17,6 +17,7 @@ using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
 using System.Configuration;
 using Newtonsoft.Json;
+using AngkasaPura.Botsky.Business;
 
 namespace AngkasaPura.Botsky.Dialogs
 {
@@ -25,8 +26,8 @@ namespace AngkasaPura.Botsky.Dialogs
     {
         public async Task StartAsync(IDialogContext context)
         {
-            await context.PostAsync("Sudah siap melapor bos ?");
-            var ReportFormDialog = FormDialog.FromForm<Laporan>(Laporan.BuildForm, FormOptions.None);
+            await context.PostAsync("Please input your report.");
+            var ReportFormDialog = FormDialog.FromForm<Laporan>(Laporan.BuildForm, FormOptions.PromptInStart);
             context.Call(ReportFormDialog, this.ResumeAfterReportFormDialog);
         }
         private async Task ResumeAfterReportFormDialog(IDialogContext context, IAwaitable<Laporan> result)
@@ -60,38 +61,42 @@ namespace AngkasaPura.Botsky.Dialogs
     }
     public enum TipeLaporan
     {
-        [Terms("kesalahan / bug", "saran", "kritik")]
-        kesalahan = 1,
-        saran,
-        kritik
+        [Terms("complain")]
+        Complain = 1,
+        [Terms("advice")]
+        Advice,
+        [Terms("critic")]
+        Critic,
+        [Terms("emergency")]
+        Emergency
     }
     [Serializable]
     public class Laporan
     {
         public string NoLaporan;
         public DateTime TglLaporan;
-        [Prompt("Siapa nama Bos ? {||}")]
+        [Prompt("What's your name ? {||}")]
         public string Nama;
 
-        [Prompt("Berapa No. telponnya ? {||}")]
+        [Prompt("Your phone number ? {||}")]
         public string Telpon;
 
-        [Prompt("Alamat E-mail Bos ? {||}")]
+        [Prompt("Your email ? {||}")]
         public string Email;
 
-        [Prompt("Apa yang ingin disampaikan bos ? {||}")]
+        [Prompt("What kind of report that you want to say ? {||}")]
         public TipeLaporan TipeLaporan;
 
-        [Prompt("Silakan masukan keterangan / laporan Bos.. {||}")]
+        [Prompt("Please input your report.. {||}")]
         public string Keterangan;
 
-        [Prompt("Terjadi di halaman apa (bisa bos copy linknya kemari) ? {||}")]
-        public string Modul;
+        [Prompt("Where it happened ? {||}")]
+        public string Lokasi;
 
-        [Prompt("Kapan Bos lihat format (year/month/date jam:menit) ? {||}")]
+        [Prompt("Please type the date and time (year/month/date jam:menit) ? {||}")]
         public DateTime Waktu;
 
-        [Prompt("Masukan perkiraan skala prioritas, 1 [tidak penting] - 10 [sangat penting] ? ")]
+        [Prompt("Please input the priority scale, 1 [not important] - 10 [important] ? ")]
         public int SkalaPrioritas = 1;
 
         public static IForm<Laporan> BuildForm()
@@ -103,22 +108,8 @@ namespace AngkasaPura.Botsky.Dialogs
                 {
                     state.NoLaporan = $"LP-{DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")}";
                     state.TglLaporan = DateTime.Now;
-                    // Retrieve storage account from connection string.
-                    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                        ConfigurationManager.AppSettings["StorageConnectionString"]);
-
-                    // Create the queue client.
-                    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-
-                    // Retrieve a reference to a queue.
-                    CloudQueue queue = queueClient.GetQueueReference("laporan");
-
-                    // Create the queue if it doesn't already exist.
-                    queue.CreateIfNotExists();
-
-                    // Create a message and add it to the queue.
-                    CloudQueueMessage message = new CloudQueueMessage(JsonConvert.SerializeObject(state));
-                    queue.AddMessage(message);
+                    Complain com = new Complain() { Email=state.Email, Keterangan=state.Keterangan, Lokasi=state.Lokasi, Nama=state.Nama, NoLaporan=state.NoLaporan , SkalaPrioritas=state.SkalaPrioritas , Telpon=state.Telpon , TglLaporan=state.TglLaporan ,TipeLaporan=state.TipeLaporan  , Waktu=state.Waktu   };
+                    AirportData.InsertComplain(com);
                     Console.WriteLine("Push data ke que");
                 }
                 );
@@ -131,34 +122,45 @@ namespace AngkasaPura.Botsky.Dialogs
                         .Field(nameof(Email))
                         .Field(nameof(TipeLaporan))
                         .Field(nameof(Keterangan))
-                        .Field(nameof(Modul))
+                        .Field(nameof(Lokasi))
                         .Field(nameof(Waktu))
                         .Field(nameof(SkalaPrioritas), validate:
                             async (state, value) =>
                             {
                                 var result = new ValidateResult { IsValid = true, Value = value, Feedback = "ok, skala valid" };
-                                var jml = int.Parse(value.ToString());
-                                if (jml <= 0)
+                                bool res = int.TryParse(value.ToString(), out int jml);
+                                if (res)
                                 {
-                                    result.Feedback = "Isilah dengan serius, prioritas minimal nilainya 1";
-                                    result.IsValid = false;
+                                    if (jml <= 0)
+                                    {
+                                        result.Feedback = "please input with correct number, minimum value is 1";
+                                        result.IsValid = false;
+                                    }
+                                    else if (jml > 10)
+                                    {
+                                        result.Feedback = "please input the correct number, maximum value is 10";
+                                        result.IsValid = false;
+                                    }
                                 }
-                                else if (jml > 10)
+                                else
                                 {
-                                    result.Feedback = "Jangan main-main dunk, prioritas tertinggi itu 10";
+                                    result.Feedback = "please input with number";
                                     result.IsValid = false;
                                 }
                                 return result;
                             })
                         .Confirm(async (state) =>
                         {
-                            var pesan = $"Laporan dari {state.Nama} tentang {state.TipeLaporan.ToString()} sudah kami terima, apakah data ini sudah valid ?";
+                            var pesan = $"We have received report from {state.Nama} about {state.TipeLaporan.ToString()}, is it valid ?";
                             return new PromptAttribute(pesan);
                         })
-                        .Message($"Terima kasih atas laporannya.")
+                        .Message($"Thanks for your report.")
                         .OnCompletion(processReport)
                         .Build();
             return form;
         }
     }
+
+    
+
 }

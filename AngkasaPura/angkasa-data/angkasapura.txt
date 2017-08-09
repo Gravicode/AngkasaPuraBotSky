@@ -8,3 +8,13 @@ pass : j0rRXaZNzqchTBox4sGgv6d
 1. perkaya fitur bot
 2. bikin mobile apps + direct line api
 3. presentasi
+
+flight:ok
+facilities : dine, taxi, hotel, Shop:ok
+Important Number:ok
+report
+APTV : ok
+news : ok
+bagasi:ok
+
+report send to azure cosmosdb table

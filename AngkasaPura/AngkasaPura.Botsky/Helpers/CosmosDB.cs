@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System.IO;
 using Microsoft.IdentityModel.Protocols;
 using System.Configuration;
+using System.Threading.Tasks;
 
 namespace AngkasaPura.Botsky.Helpers
 {
@@ -27,9 +28,17 @@ namespace AngkasaPura.Botsky.Helpers
 
         public string DatabaseName { get; set; } = "AngkasaPuraDB";
 
-        public List<T> GetDataById<T>(string ID)
+        public async Task<bool> InsertDoc<T>(string CollectionName, T Data)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await this.client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseName,CollectionName), Data);
+                return await Task.FromResult(true);
+            }
+            catch
+            {
+                return await Task.FromResult(false);
+            }
         }
 
         public List<T> GetDataById<T>(string CollectionName, string ID)

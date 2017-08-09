@@ -10,12 +10,15 @@
     [Serializable]
     public class RootDialog : IDialog<object>
     {
-        const string LaporanOption = "Mau Laporan";
-        const string FlightOption = "Flight Info";
-        const string FacilityOption = "Facility Info (dine, taxi, hotel, shop)";
-        const string ImportantNoOption = "Important Number Info";
-
-        const string FAQOption = "Mau Tanya";
+        const string LaporanOption = "I want to report";
+        const string FlightOption = "Flight Information";
+        const string LuggageOption = "Luggage Information";
+        const string FacilityOption = "Facility Information (dine, taxi, hotel, shop)";
+        const string ImportantNoOption = "Important Number Information";
+        const string APTVOption = "Angkasa Pura Television";
+        const string NewsOption = "Latest News";
+        const string ReportOption = "Angkasa Pura Internal Report";
+        const string FAQOption = "FAQ (Question and Answers)";
         public async Task StartAsync(IDialogContext context)
         {
             context.Wait(this.MessageReceivedAsync);
@@ -37,7 +40,7 @@
 
         private void ShowOptions(IDialogContext context)
         {
-            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption,FacilityOption, ImportantNoOption, FAQOption }, "Halo bos, ada yang bisa dibantu ?", "Pilihan yang tidak tepat bos.", 5);
+            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption, LuggageOption, FacilityOption, ImportantNoOption, APTVOption, NewsOption, FAQOption, ReportOption }, "Hello Boss, can I help you ?", "Please select again boss.", 9);
         }
 
         private async Task OnOptionSelected(IDialogContext context, IAwaitable<string> result)
@@ -64,6 +67,18 @@
                     case ImportantNoOption:
                         context.Call(new ImportantNoDialog(), this.ResumeAfterOptionDialog);
                         break;
+                    case LuggageOption:
+                        context.Call(new LuggageDialog(), this.ResumeAfterOptionDialog);
+                        break;
+                    case APTVOption:
+                        context.Call(new APTVDialog(), this.ResumeAfterOptionDialog);
+                        break;
+                    case NewsOption:
+                        context.Call(new NewsDialog(), this.ResumeAfterOptionDialog);
+                        break;
+                    case ReportOption:
+                        context.Call(new ReportAPDialog(), this.ResumeAfterOptionDialog);
+                        break;
                 }
             }
             catch (TooManyAttemptsException ex)
@@ -87,6 +102,7 @@
             try
             {
                 var message = await result;
+                await context.PostAsync($"Terima kasih, semoga informasinya bermanfaat. Jika Anda tidak menemukan yang Anda cari silakan ulangi kembali.");
             }
             catch (Exception ex)
             {
