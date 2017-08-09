@@ -92,7 +92,7 @@ namespace AngkasaPura.Botsky.Dialogs
                     case Flight1:
                         {
                             await context.PostAsync("You can get flight information by answer this question..");
-                            var FlightFormDialog = FormDialog.FromForm<FlightQuery1>(FlightQuery1.BuildForm, FormOptions.None);
+                            var FlightFormDialog = FormDialog.FromForm<FlightQuery1>(FlightQuery1.BuildForm, FormOptions.PromptInStart);
 
                             context.Call(FlightFormDialog, this.ResumeAfterOptionDialog);
                         }
@@ -101,7 +101,7 @@ namespace AngkasaPura.Botsky.Dialogs
                     case Flight2:
                         {
                             await context.PostAsync("You can get flight information by answer this question..");
-                            var FlightFormDialog = FormDialog.FromForm<FlightQuery2>(FlightQuery2.BuildForm, FormOptions.None);
+                            var FlightFormDialog = FormDialog.FromForm<FlightQuery2>(FlightQuery2.BuildForm, FormOptions.PromptInStart);
 
                             context.Call(FlightFormDialog, this.ResumeAfterOptionDialog2);
                         }

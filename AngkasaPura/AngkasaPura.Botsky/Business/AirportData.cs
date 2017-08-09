@@ -31,7 +31,12 @@ namespace AngkasaPura.Botsky.Business
             var data = Context.GetDataByQuery<Flight>("Flights", $"SELECT * FROM Flights WHERE CONTAINS(LOWER(Flights.AIRLINE_NAME),'{Airline.ToLower()}')");
             return data;
         }
-
+        public static List<Facility> GetFacilityByCategory(string Category,string Name=null)
+        {
+            var query = Name == null ? $"SELECT * FROM C WHERE C.CATEGORY_NAME_ENG = '{Category}' " : $"SELECT * FROM C WHERE C.CATEGORY_NAME_ENG = '{Category}' AND CONTAINS(LOWER(C.OBJECT_NAME),'{Name.ToLower()}')";
+            var data = Context.GetDataByQuery<Facility>("Facilities", query);
+            return data;
+        }
         #endregion
     }
 

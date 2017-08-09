@@ -12,6 +12,7 @@
     {
         const string LaporanOption = "Mau Laporan";
         const string FlightOption = "Get Flight Info";
+        const string FacilityOption = "Facility Info (dine, taxi, hotel, shop)";
         const string FAQOption = "Mau Tanya";
         public async Task StartAsync(IDialogContext context)
         {
@@ -34,7 +35,7 @@
 
         private void ShowOptions(IDialogContext context)
         {
-            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption, FAQOption }, "Halo bos, ada yang bisa dibantu ?", "Pilihan yang tidak tepat bos.", 3);
+            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption,FacilityOption, FAQOption }, "Halo bos, ada yang bisa dibantu ?", "Pilihan yang tidak tepat bos.", 4);
         }
 
         private async Task OnOptionSelected(IDialogContext context, IAwaitable<string> result)
@@ -54,6 +55,9 @@
                         break;
                     case FAQOption:
                         context.Call(new FAQDialog(), this.ResumeAfterOptionDialog);
+                        break;
+                    case FacilityOption:
+                        context.Call(new FacilityDialog(), this.ResumeAfterOptionDialog);
                         break;
                 }
             }
