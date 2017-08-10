@@ -4,8 +4,28 @@
              xmlns:local="clr-namespace:AngkasaPura.BotSkyApp"
              x:Class="AngkasaPura.BotSkyApp.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="MessagesListView" Grid.Row="0" BackgroundColor="Silver" ItemsSource="{Binding ConversationList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Text}" TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator IsRunning="{Binding ProgressVisible}" IsVisible="{Binding ProgressVisible}" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            <Entry Grid.Row="2" x:Name="Message"/>
+            <Button Grid.Row="3" Text="Send" BackgroundColor="Orange" Clicked="SendButtonClicked"/>
+
+        </Grid>
+    </ContentPage.Content>
 
 </ContentPage>
+    
