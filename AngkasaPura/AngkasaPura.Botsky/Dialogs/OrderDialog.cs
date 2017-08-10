@@ -32,11 +32,11 @@ namespace AngkasaPura.Botsky.Dialogs
 
                 if (ex.InnerException == null)
                 {
-                    reply = "Bos membatalkan order, keluar dari dialog.";
+                    reply = MESSAGESINFO.CANCEL_DIALOG;
                 }
                 else
                 {
-                    reply = $"Sorry terjadi kesalahan bos :( Detail: {ex.InnerException.Message}";
+                    reply = $"{MESSAGESINFO.ERROR_INFO} Detail: {ex.InnerException.Message}";
                 }
 
                 await context.PostAsync(reply);
@@ -107,7 +107,7 @@ namespace AngkasaPura.Botsky.Dialogs
                     // Create a message and add it to the queue.
                     CloudQueueMessage message = new CloudQueueMessage(JsonConvert.SerializeObject(state));
                     queue.AddMessage(message);
-                    Console.WriteLine("Push data ke que");
+                    
                 }
                  );
             };

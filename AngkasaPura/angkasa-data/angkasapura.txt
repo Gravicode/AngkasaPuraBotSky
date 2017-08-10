@@ -12,9 +12,9 @@ pass : j0rRXaZNzqchTBox4sGgv6d
 flight:ok
 facilities : dine, taxi, hotel, Shop:ok
 Important Number:ok
-report
+report: bug
 APTV : ok
 news : ok
 bagasi:ok
 
-report send to azure cosmosdb table
+report send to azure cosmosdb table:ok

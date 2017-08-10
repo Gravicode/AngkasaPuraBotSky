@@ -167,6 +167,7 @@
     </Compile>
     <Compile Include="Helpers\CosmosDB.cs" />
     <Compile Include="Helpers\IDataRepository.cs" />
+    <Compile Include="Helpers\MESSAGESINFO.cs" />
     <Compile Include="Helpers\Tools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

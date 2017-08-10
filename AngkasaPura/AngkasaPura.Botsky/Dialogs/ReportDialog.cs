@@ -110,7 +110,7 @@ namespace AngkasaPura.Botsky.Dialogs
                     state.TglLaporan = DateTime.Now;
                     Complain com = new Complain() { Email=state.Email, Keterangan=state.Keterangan, Lokasi=state.Lokasi, Nama=state.Nama, NoLaporan=state.NoLaporan , SkalaPrioritas=state.SkalaPrioritas , Telpon=state.Telpon , TglLaporan=state.TglLaporan ,TipeLaporan=state.TipeLaporan  , Waktu=state.Waktu   };
                     AirportData.InsertComplain(com);
-                    Console.WriteLine("Push data ke que");
+                    
                 }
                 );
 

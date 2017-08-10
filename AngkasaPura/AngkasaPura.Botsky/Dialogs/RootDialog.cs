@@ -6,6 +6,7 @@
     using System.Threading.Tasks;
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Connector;
+    using AngkasaPura.Botsky.Helpers;
 
     [Serializable]
     public class RootDialog : IDialog<object>
@@ -83,7 +84,7 @@
             }
             catch (TooManyAttemptsException ex)
             {
-                await context.PostAsync($"Weeew! Terlalu banyak nyoba bos :(. Ojo khawatir, silakan coba lagi bos!");
+                await context.PostAsync(MESSAGESINFO.TOO_MANY_ATTEMPT);
 
                 context.Wait(this.MessageReceivedAsync);
             }
@@ -102,7 +103,7 @@
             try
             {
                 var message = await result;
-                await context.PostAsync($"Terima kasih, semoga informasinya bermanfaat. Jika Anda tidak menemukan yang Anda cari silakan ulangi kembali.");
+                await context.PostAsync($"Thank you for using our services, if you don't get any result, please try again.");
             }
             catch (Exception ex)
             {

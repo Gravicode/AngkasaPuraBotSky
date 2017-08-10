@@ -40,11 +40,11 @@ namespace AngkasaPura.Botsky.Dialogs
 
                 if (ex.InnerException == null)
                 {
-                    reply = "Bos membatalkan order, keluar dari dialog.";
+                    reply = MESSAGESINFO.CANCEL_DIALOG;
                 }
                 else
                 {
-                    reply = $"Sorry terjadi kesalahan bos :( Detail: {ex.InnerException.Message}";
+                    reply = $"{MESSAGESINFO.ERROR_INFO} Detail: {ex.InnerException.Message}";
                 }
 
                 await context.PostAsync(reply);
@@ -67,11 +67,11 @@ namespace AngkasaPura.Botsky.Dialogs
 
                 if (ex.InnerException == null)
                 {
-                    reply = "Bos membatalkan order, keluar dari dialog.";
+                    reply = MESSAGESINFO.CANCEL_DIALOG;
                 }
                 else
                 {
-                    reply = $"Sorry terjadi kesalahan bos :( Detail: {ex.InnerException.Message}";
+                    reply = $"{MESSAGESINFO.ERROR_INFO} Detail: {ex.InnerException.Message}";
                 }
 
                 await context.PostAsync(reply);
