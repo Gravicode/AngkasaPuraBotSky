@@ -1,0 +1,17 @@
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\AngkasaPura.BotSkyApp.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\AngkasaPura.BotSkyApp.pdb
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Core.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Platform.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Xaml.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Core.pdb
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Core.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Platform.pdb
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Xaml.pdb
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Xaml.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.csprojResolveAssemblyReference.cache
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.MainPage.xaml.g.cs
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.App.xaml.g.cs
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.pdb
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.dll.mdb
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\AngkasaPura.BotSkyApp.dll.mdb

@@ -6,6 +6,7 @@ using Microsoft.WindowsAzure.Storage.Queue;
 using Newtonsoft.Json;
 using System.Configuration;
 using Microsoft.Bot.Builder.Dialogs;
+using AngkasaPura.Botsky.Helpers;
 
 namespace AngkasaPura.Botsky.Dialogs
 {
