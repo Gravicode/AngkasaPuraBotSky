@@ -135,11 +135,9 @@ namespace AngkasaPura.Botsky.Dialogs
         public List<Luggage> Results;
 
         [Prompt("What is the airline name (not necessary to use full name) ?")]
-        [Describe(description: "eg. Banana Air")]
         public string Airline;
 
         [Prompt("What is the flight number (check your boarding pass) ?")]
-        [Describe(description: "eg. 0012")]
         public string FlightNo;
         public static IForm<LuggageQuery> BuildForm()
         {

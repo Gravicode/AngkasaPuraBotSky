@@ -228,6 +228,7 @@ namespace AngkasaPura.Botsky.Dialogs
                             {
                                 var result = new ValidateResult { IsValid = true, Value = value, Feedback = "product ready" };
                                 var ok = int.TryParse(value.ToString(), out int Request);
+                                /*
                                 if (ok && Request >= state.Stock && Request > 0)
                                 {
                                     result.Feedback = $"quantity is ok.";
@@ -239,7 +240,7 @@ namespace AngkasaPura.Botsky.Dialogs
                                     result.Feedback = $"stock is not ready, fill with lower quantity.";
                                     result.IsValid = false;
 
-                                }
+                                }*/
                                 return result;
                             })
                         .Confirm(async (state) =>

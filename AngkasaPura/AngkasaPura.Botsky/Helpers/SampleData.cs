@@ -14,8 +14,15 @@ namespace AngkasaPura.Botsky.Helpers
 
         public static TagData GetTagByCode(string Code)
         {
-            var data = TagData.GetDatas().Where(x => x.TagCode == Code).FirstOrDefault();
-            return data != null ? data : null;
+            var data = TagData.GetDatas().Where(x => x.TagCode == Code);
+            if(data!=null && data.Count() > 0)
+            {
+                return data.SingleOrDefault();
+            }
+            else
+            {
+                return null;
+            }
 
         }
     }
@@ -57,6 +64,8 @@ namespace AngkasaPura.Botsky.Helpers
     #endregion
 
     #region cart data
+    [Serializable]
+
     public class CartItem
     {
         public string KodeProduk { set; get; }
@@ -65,6 +74,7 @@ namespace AngkasaPura.Botsky.Helpers
         public double Price { set; get; }
         public double Total { set; get; }
     }
+    [Serializable]
 
     public class Cart
     {
@@ -87,8 +97,9 @@ namespace AngkasaPura.Botsky.Helpers
     }
     #endregion
     #region rfid tracker
+    [Serializable]
     public enum TagTypes { People, Things, Other }
-
+    [Serializable]
     public class TagData
     {
         public string TagCode { get; set; }

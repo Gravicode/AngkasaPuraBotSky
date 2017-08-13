@@ -48,7 +48,7 @@ namespace AngkasaPura.Botsky.Business
         public static List<Luggage> GetLuggages(string Airline, string FlightNo = null)
         {
             var query = $"SELECT * FROM C WHERE CONTAINS(LOWER(C.LONG_NAME),'{Airline.ToLower()}') AND CONTAINS(LOWER(C.FLIGHT_NUM),'{FlightNo.ToLower()}')";
-            var data = Context.GetDataByQuery<Luggage>("TagTrackers", query);
+            var data = Context.GetDataByQuery<Luggage>("Luggages", query);
             return data;
         }
         public static List<APTV> GetAPTV()
