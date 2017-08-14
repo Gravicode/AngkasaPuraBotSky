@@ -50,28 +50,22 @@
             }
         }
 
-        private async Task ResumeAfterSupportDialog(IDialogContext context, IAwaitable<int> result)
-        {
-            var ticketNumber = await result;
 
-            await context.PostAsync($"Thanks for contacting our support team. Your ticket number is {ticketNumber}.");
-         
-        }
 
         private async Task ResumeAfterOptionDialog(IDialogContext context, IAwaitable<object> result)
         {
             try
             {
                 var message = await result;
-                await context.PostAsync($"Thank you for using our services, if you don't get any result, please try again.");
+                //await context.PostAsync($"Thank you for using our services, if you don't get any result, please try again.");
             }
             catch (Exception ex)
             {
-                await context.PostAsync($"Failed with message: {ex.Message}");
+                //await context.PostAsync($"Failed with message: {ex.Message}");
             }
             finally
             {
-              
+                context.Done<object>(null);
             }
         }
     }

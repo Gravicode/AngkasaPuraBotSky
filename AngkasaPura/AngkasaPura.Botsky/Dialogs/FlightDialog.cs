@@ -190,9 +190,6 @@ namespace AngkasaPura.Botsky.Dialogs
                     {
                         state.Result=$"Data is not found. Please try again..";
                     }
-                    /*
-                     */
-
                 });
             };
             var builder = new FormBuilder<FlightQuery2>(false);
