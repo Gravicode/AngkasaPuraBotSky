@@ -22272,16 +22272,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\experiment\\Github\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.UWP\\AngkasaPura.BotSkyApp.UWP.csproj",
+      "projectUniqueName": "\\\\vmware-host\\Shared Folders\\Documents\\GitHub\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.UWP\\AngkasaPura.BotSkyApp.UWP.csproj",
       "projectName": "AngkasaPura.BotSkyApp.UWP",
-      "projectPath": "C:\\experiment\\Github\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.UWP\\AngkasaPura.BotSkyApp.UWP.csproj",
-      "projectJsonPath": "C:\\experiment\\Github\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.UWP\\project.json",
+      "projectPath": "\\\\vmware-host\\Shared Folders\\Documents\\GitHub\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.UWP\\AngkasaPura.BotSkyApp.UWP.csproj",
+      "projectJsonPath": "\\\\vmware-host\\Shared Folders\\Documents\\GitHub\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.UWP\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\experiment\\Github\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.csproj": {
-              "projectPath": "C:\\experiment\\Github\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.csproj"
+            "\\\\vmware-host\\Shared Folders\\Documents\\GitHub\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.csproj": {
+              "projectPath": "\\\\vmware-host\\Shared Folders\\Documents\\GitHub\\AngkasaPuraBotSky\\AngkasaPura\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp\\AngkasaPura.BotSkyApp.csproj"
             }
           }
         }

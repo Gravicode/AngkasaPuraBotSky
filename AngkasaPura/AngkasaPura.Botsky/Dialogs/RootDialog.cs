@@ -19,6 +19,7 @@
         const string APTVOption = "Angkasa Pura Television";
         const string NewsOption = "Latest News";
         const string ReportOption = "Angkasa Pura Internal Report";
+        const string ThirdPartyOption = "Our partner services";
         const string FAQOption = "FAQ (Question and Answers)";
         public async Task StartAsync(IDialogContext context)
         {
@@ -41,7 +42,7 @@
 
         private void ShowOptions(IDialogContext context)
         {
-            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption, LuggageOption, FacilityOption, ImportantNoOption, APTVOption, NewsOption, FAQOption, ReportOption }, "Hello Boss, can I help you ?", "Please select again boss.", 9);
+            PromptDialog.Choice(context, this.OnOptionSelected, new List<string>() { LaporanOption, FlightOption, LuggageOption, FacilityOption, ImportantNoOption, APTVOption, NewsOption, ThirdPartyOption, FAQOption, ReportOption }, "Hello Boss, can I help you ?", "Please select again boss.", 10);
         }
 
         private async Task OnOptionSelected(IDialogContext context, IAwaitable<string> result)
@@ -80,6 +81,10 @@
                     case ReportOption:
                         context.Call(new ReportAPDialog(), this.ResumeAfterOptionDialog);
                         break;
+                    case ThirdPartyOption:
+                        context.Call(new OtherDialog(), this.ResumeAfterOptionDialog);
+                        break;
+
                 }
             }
             catch (TooManyAttemptsException ex)

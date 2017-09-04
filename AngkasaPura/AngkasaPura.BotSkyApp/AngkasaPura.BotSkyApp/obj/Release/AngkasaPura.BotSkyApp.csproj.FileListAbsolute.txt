@@ -25,3 +25,28 @@ C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\Angkasa
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\System.Net.Http.Primitives.xml
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.dll.mdb
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\AngkasaPura.BotSkyApp.dll.mdb
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\AngkasaPura.BotSkyApp.dll.config
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\AngkasaPura.BotSkyApp.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\AngkasaPura.BotSkyApp.pdb
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Newtonsoft.Json.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\System.Net.Http.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\System.Net.Http.Extensions.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\System.Net.Http.Primitives.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Core.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Platform.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Xaml.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Newtonsoft.Json.xml
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\System.Net.Http.xml
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\System.Net.Http.Extensions.xml
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\System.Net.Http.Primitives.xml
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Core.pdb
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Core.xml
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Platform.pdb
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Xaml.pdb
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\bin\Release\Xamarin.Forms.Xaml.xml
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.csproj.App.config
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.csprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.MainPage.xaml.g.cs
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.App.xaml.g.cs
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.dll
+\\vmware-host\Shared Folders\Documents\GitHub\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.BotSkyApp\AngkasaPura.BotSkyApp\obj\Release\AngkasaPura.BotSkyApp.pdb
