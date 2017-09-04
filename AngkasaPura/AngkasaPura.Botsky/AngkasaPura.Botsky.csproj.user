@@ -3,7 +3,7 @@
   <PropertyGroup>
     <UseIISExpress>true</UseIISExpress>
     <ProjectView>ProjectFiles</ProjectView>
-    <NameOfLastUsedPublishProfile>AngkasaPuraBotSky - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>angkasapurabotsky - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

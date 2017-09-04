@@ -220,3 +220,11 @@ C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\Micros
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\it\Microsoft.Bot.Builder.resources.dll
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\nl\Microsoft.Bot.Builder.resources.dll
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Common.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Interfaces.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Redis.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Text.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Common.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Interfaces.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Redis.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\AngkasaPura.Botsky\bin\ServiceStack.Text.xml

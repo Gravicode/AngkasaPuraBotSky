@@ -5,8 +5,15 @@ C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\DataS
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\DataService.pdb
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\Microsoft.Azure.Documents.Client.dll
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\Newtonsoft.Json.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Common.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Interfaces.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Redis.dll
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Text.dll
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\Microsoft.Azure.Documents.Client.xml
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\Newtonsoft.Json.xml
-C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\obj\Release\DataService.csprojResolveAssemblyReference.cache
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Common.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Interfaces.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Redis.xml
+C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\bin\Release\ServiceStack.Text.xml
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\obj\Release\DataService.exe
 C:\experiment\Github\AngkasaPuraBotSky\AngkasaPura\DataService\obj\Release\DataService.pdb
